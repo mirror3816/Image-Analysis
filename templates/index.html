@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>YOLOv4 Image Analysis</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        .center {
+            display: inline-block;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="center">
+        <h1>YOLOv4 Image Analysis</h1>
+        <form action="/analyze" method="POST" enctype="multipart/form-data">
+            <input type="file" name="image">
+            <input type="submit" value="Analyze">
+        </form>
+        
+        <!-- 이미지 표시 -->
+        {% if image_path %}
+        <img src="{{ image_path }}" alt="Analyzed Image">
+        {% endif %}
+    </div>
+</body>
+</html>
